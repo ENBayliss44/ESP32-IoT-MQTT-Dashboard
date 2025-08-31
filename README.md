@@ -32,7 +32,7 @@ The system reads sensor data from the temperature sensor via the ESP32, publishe
 
 ### 1. ESP32 Firmware
 
-1. Install [Arduino IDE](https://www.arduino.cc/en/software).s  
+1. Install [Arduino IDE](https://www.arduino.cc/en/software)
 2. Copy your Wi-Fi and MQTT credentials into `ESP_32_Firmware/secure.h`.  
 3. Open `ESP_32_Firmware.ino` and upload to your ESP32.  
 

@@ -2,6 +2,14 @@
 #include <PubSubClient.h>
 #include "secure.h"
 
+/*
+// Replace with your Wi-Fi and MQTT details and implement in secure.h
+const char* WIFI_SSID = "";
+const char* WIFI_PASSWORD = "";
+const char* MQTT_SERVER = "192.168.1.xxx"; // Your broker's IP
+*/
+
+
 WiFiClient wifiClient;
 PubSubClient mqtt(wifiClient);
 

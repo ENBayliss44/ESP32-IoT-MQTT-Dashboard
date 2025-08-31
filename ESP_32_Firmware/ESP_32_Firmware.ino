@@ -7,6 +7,7 @@ PubSubClient mqtt(wifiClient);
 
 unsigned long lastPublish = 0;
 
+// MQTT error state decoding
 String mqttStateToString(int state) {
   switch(state) {
     case 0: return "Connection accepted";

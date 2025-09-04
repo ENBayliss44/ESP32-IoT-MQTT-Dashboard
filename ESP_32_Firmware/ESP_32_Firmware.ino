@@ -7,6 +7,7 @@
 const char* WIFI_SSID = "";
 const char* WIFI_PASSWORD = "";
 const char* MQTT_SERVER = "192.168.1.xxx"; // Your broker's IP
+uint16_t MQTT_PORT = ; // e.g. 1883
 */
 
 
@@ -44,8 +45,8 @@ String makeClientId() {
 
 void connectWiFi() {
   Serial.print("WiFi: connecting to ");
-  Serial.println(ssid);
-  WiFi.begin(ssid, password);
+  Serial.println(WIFI_SSID);
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
   unsigned long start = millis();
   while (WiFi.status() != WL_CONNECTED && millis() - start < 20000) {
     Serial.print(".");
@@ -92,7 +93,7 @@ void setup() {
   Serial.begin(115200);
   delay(100);
   connectWiFi();
-  mqtt.setServer(mqttServer, mqttPort);
+  mqtt.setServer(MQTT_SERVER, MQTT_PORT);
   mqttReconnect();
 }
 

@@ -3,11 +3,22 @@
 
 ## Overview
 
-This project demonstrates an **end-to-end IoT system** using an ESP32-WROOM-32 dev board, DHT11 Temperature Sensor, MQTT protocol, and a Node-RED dashboard.  
-The system reads sensor data from the temperature sensor via the ESP32, publishes it to a local MQTT broker (Mosquitto), and displays it in real-time on a web dashboard. Historical data is also recorded for analysis.
+This project demonstrates an end-to-end IoT system using an ESP32-WROOM-32 development board, a DHT11 temperature sensor, MQTT messaging, and a Node-RED web dashboard.
+
+The ESP32 reads temperature data from the sensor, publishes it to a local MQTT broker (Mosquitto), and Node-RED subscribes to the data and visualizes it in real time. Historical values are displayed using charts for trend analysis
+
+ESP32 (DHT11)
+↓ MQTT publish (sensors/temp)
+Mosquitto Broker
+↓ MQTT subscribe
+Node-RED
+↓
+Web Dashboard (Gauge + Chart)
 
 **Key Goals:**
-- Learn and demonstrate IoT concepts, MQTT messaging, and embedded system integration.
+- Demonstrate practical IoT architecture using MQTT
+- Integrate embedded firmware with backend services
+- Visualize live and historical sensor data
 
 ## Features
 
@@ -47,6 +58,8 @@ sudo systemctl restart mosquitto
 sudo lsof -iTCP -sTCP:LISTEN -n -P | grep mosquitto
 ```
 
+Note: On Windows or macOS, install Mosquitto using the official installer and ensure it is listening on port 1883 with remote access enabled.
+
 ### 3. Node-RED Dashboard
 
 ```bash
@@ -62,6 +75,8 @@ npm install node-red-dashboard
 ```bash
 node-red
 ```
+
+Note: On Windows or macOS, install node-red using the official installer.
 
 #### 3.2. Import flows: Menu -> Import -> Clipboard -> Paste flows.json
 

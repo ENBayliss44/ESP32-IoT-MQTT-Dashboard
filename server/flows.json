@@ -1,8 +1,16 @@
 [
     {
-        "id": "484258531eb798a9",
+        "id": "449d17f820b4a8eb",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6af8aa38f8fe66f2",
         "type": "ui_chart",
-        "z": "65a5bf6aa87a8999",
+        "z": "449d17f820b4a8eb",
         "name": "",
         "group": "7b142a7a166443f1",
         "order": 1,
@@ -37,10 +45,31 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 390,
-        "y": 180,
+        "x": 630,
+        "y": 420,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "a567249eed1c722d",
+        "type": "mqtt in",
+        "z": "449d17f820b4a8eb",
+        "name": "",
+        "topic": "sensors/temp",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "da9bb97308add11f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 370,
+        "y": 420,
+        "wires": [
+            [
+                "6af8aa38f8fe66f2"
+            ]
         ]
     },
     {
@@ -55,6 +84,37 @@
         "className": ""
     },
     {
+        "id": "da9bb97308add11f",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.1.79",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
         "id": "853782333328b81e",
         "type": "ui_tab",
         "name": "Home",
@@ -63,7 +123,7 @@
         "hidden": false
     },
     {
-        "id": "cf7d77c5c9f3775d",
+        "id": "11f22d26c52617d2",
         "type": "global-config",
         "env": [],
         "modules": {

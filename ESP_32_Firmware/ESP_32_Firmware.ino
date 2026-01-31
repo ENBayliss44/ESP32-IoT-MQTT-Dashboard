@@ -10,6 +10,12 @@ const char* MQTT_SERVER = "192.168.1.xxx"; // Your broker's IP
 uint16_t MQTT_PORT = ; // e.g. 1883
 */
 
+// Include the DHT11 library for interfacing with the sensor.
+#include <DHT11.h>
+
+// Create an instance of the DHT11 class.
+// - For ESP32: Connect the sensor to pin GPIO15 or P15.
+DHT11 dht11(15);
 
 WiFiClient wifiClient;
 PubSubClient mqtt(wifiClient);
@@ -104,9 +110,12 @@ void loop() {
   unsigned long now = millis();
   if (now - lastPublish > 5000) {
     lastPublish = now;
-    float temperature = random(200, 300) / 10.0; // replace with your sensor
+    
+    // Attempt to read the temperature value from the DHT11 sensor.
+    int temperature = dht11.readTemperature();
+
     char buf[16];
-    snprintf(buf, sizeof(buf), "%.2f", temperature);
+    snprintf(buf, sizeof(buf), "%.2d", temperature);
     bool ok = mqtt.publish("sensors/temp", buf);
     Serial.print("Published ");
     Serial.print(buf);

@@ -1,12 +1,9 @@
 
 # ESP32 IoT Dashboard Project
 
-![GitHub Repo Size](https://img.shields.io/github/repo-size/ENBayliss44/ESP32-IoT-MQTT-Dashboard)
-![GitHub stars](https://img.shields.io/github/stars/ENBayliss44/ESP32-IoT-MQTT-Dashboard?style=social)
-
 ## Overview
 
-This project demonstrates an **end-to-end IoT system** using an ESP32-WROOM-32 dev board, I2C Temperature Sensor, MQTT protocol, and a Node-RED dashboard.  
+This project demonstrates an **end-to-end IoT system** using an ESP32-WROOM-32 dev board, DHT11 Temperature Sensor, MQTT protocol, and a Node-RED dashboard.  
 The system reads sensor data from the temperature sensor via the ESP32, publishes it to a local MQTT broker (Mosquitto), and displays it in real-time on a web dashboard. Historical data is also recorded for analysis.
 
 **Key Goals:**
@@ -87,13 +84,9 @@ Commit changes with clear messages.
 
 Open a pull request describing your changes.
 
-## To-Do
-
-Implement I2C temp sensor (Currently simulating using psuedorandom data)
-
 ## Future Enhancements
 
-Add additional sensors (humidity, pressure, motion).
+Add additional sensors (pressure, motion).
 
 Implement remote access using secure VPN or cloud MQTT broker.
 

@@ -10,14 +10,6 @@ The ESP32 reads temperature data from the sensor, publishes it to a local MQTT b
 ## System Architecture
 ![Architecture](docs/architecture.svg)
 
-ESP32 (DHT11)
-↓ MQTT publish (sensors/temp)
-Mosquitto Broker
-↓ MQTT subscribe
-Node-RED
-↓
-Web Dashboard (Gauge + Chart)
-
 **Key Goals:**
 - Demonstrate practical IoT architecture using MQTT
 - Integrate embedded firmware with backend services

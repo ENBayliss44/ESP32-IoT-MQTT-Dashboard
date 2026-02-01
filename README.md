@@ -7,6 +7,9 @@ This project demonstrates an end-to-end IoT system using an ESP32-WROOM-32 devel
 
 The ESP32 reads temperature data from the sensor, publishes it to a local MQTT broker (Mosquitto), and Node-RED subscribes to the data and visualizes it in real time. Historical values are displayed using charts for trend analysis
 
+## System Architecture
+![Architecture](docs/architecture.svg)
+
 ESP32 (DHT11)
 ↓ MQTT publish (sensors/temp)
 Mosquitto Broker
